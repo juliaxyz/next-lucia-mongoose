@@ -1,13 +1,11 @@
 //app/login/page.tsx
 'use client';
-
 import React, { useRef } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { login } from '@/lib/actions/auth.actions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -20,8 +18,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { AuthSchema } from '@/schemas';
 import { useRouter } from 'next/navigation';
-import { Loader2, LogIn } from 'lucide-react';
-
+import { LoginButton } from './AuthButtons';
 export default function LoginForm() {
   const router = useRouter();
 
@@ -97,16 +94,5 @@ export default function LoginForm() {
         <LoginButton />
       </form>
     </Form>
-  );
-}
-
-function LoginButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button className='mt-4 w-full' aria-disabled={pending} type='submit'>
-      {pending ? <Loader2 className='animated-spin' /> : 'Sign In'}
-      <LogIn className='ml-auto h-5 w-5 text-gray-50' />
-    </Button>
   );
 }

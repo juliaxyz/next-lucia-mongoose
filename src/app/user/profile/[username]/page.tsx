@@ -3,8 +3,7 @@ import { redirect } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { validateRequest } from '@/lib/auth';
-import Logout from '@/app/auth/_components/Logout';
-import { Button } from '@/components/ui/button';
+import { Logout } from '@/app/auth/_components/AuthButtons';
 
 export default async function ProfilePage() {
   const { user } = await validateRequest();
