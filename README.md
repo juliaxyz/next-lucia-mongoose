@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Features
 
-Next.js 14 & Lucia auth template using MongoDB with Mongoose and nodemailer. User registers, receives an email verification code, can enter the code into an OTP form and is then redirected to the login page. Session attributes include data from "profile" model.ie. name, profile avatar, etc. After logging in, the user is redirected to their profile.
+Next.js 14 & Lucia auth template using MongoDB & MongodbAdapter with Mongoose. Includes middleware for protected routes and nodemailer for mailing otp verification codes. User registers, receives an email verification code, can enter the code into an OTP form and is then redirected to the login page. Session attributes include data from "profile" model.ie. name, profile avatar, etc. After logging in, the user is redirected to their profile.
 
 Note: When a user registers in this app it automatically creates a unique username based on the first and last name.
 
@@ -88,10 +88,12 @@ Lucia is an open source auth library that abstracts away the complexity of handl
 
 - Next.js 14
   - Tailwind Css
+  - middleware
 - MongoDB
 - Mongoose
 - Lucia
   - oslo
+  - MongodbAdapter
 - shadcn/ui
   - React Hook Form
   - Zod
